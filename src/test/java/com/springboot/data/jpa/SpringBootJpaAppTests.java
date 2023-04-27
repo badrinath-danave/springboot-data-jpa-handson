@@ -1,10 +1,10 @@
-package com.springboot.data.jpa.springbootdatajpahandson;
+package com.springboot.data.jpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootDataJpaHandsonApplicationTests {
+class SpringBootJpaAppTests {
 
 	@Test
 	void contextLoads() {
