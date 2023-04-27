@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
@@ -28,5 +29,8 @@ public class Course {
 	private String courseTitle;
 	private Integer credit;
 	
+	
+	@OneToOne(mappedBy = "course")
+	private CourseMaterial cm;
 	
 }

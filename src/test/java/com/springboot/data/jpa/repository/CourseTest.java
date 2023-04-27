@@ -17,6 +17,8 @@ public class CourseTest {
 	@Test
 	public void displayCourse() {
 		List<Course> courseList = repository.findAll();
+		
+		System.out.println("all courses: "+courseList);
 	}
 	
 }
