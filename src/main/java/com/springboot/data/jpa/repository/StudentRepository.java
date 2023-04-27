@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.data.jpa.entity.Student;
@@ -20,4 +21,10 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 	//JPQL
 	@Query("select s from Student s where s.emailId=?1")
 	Student getStudentByEmailAddress(String email);
+	
+	//@Query(value="select * from student_tbl s where s.email_address= ?1", nativeQuery = true)
+	@Query(value="select * from student_tbl s where s.email_address= :emailId", nativeQuery = true)
+	Student getStudentByEmailAddressNativeQuery(@Param("emailId") String email);
+	
+	
 }
